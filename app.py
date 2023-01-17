@@ -25,7 +25,7 @@ app.layout = html.Div(children=[
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardImg(src='/assets/logo_dark.png', top=True),
+                dbc.CardImg(src='/static/images/logo_dark.png', top=True),
                 #dbc.CardBody([]),
                 html.H5('Cidades:'),
                 dcc.Checklist(df_data['City'].value_counts().index,
@@ -96,9 +96,8 @@ def render_graphs(cities, main_variable):
 
 # MAIN
 if __name__ == '__main__':
-    #app.run_server(debug=True)
-    #app.run_server(debug=False, port=8080, host='0.0.0.0')
     app.run_server(debug=False)
+    #app.run_server(debug=False, port=8080, host='0.0.0.0')
 
 
 
