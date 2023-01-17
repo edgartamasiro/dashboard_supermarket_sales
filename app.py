@@ -24,7 +24,7 @@ app.layout = html.Div(children=[
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardImg(src="static/images/logo.png", top=True),
+                dbc.CardImg(src="assets/logo.png", top=True),
                 dbc.CardBody([
                     html.H5('Cidades:'),
                     dcc.Checklist(df_data['City'].value_counts().index,
