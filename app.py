@@ -12,8 +12,8 @@ from dash_bootstrap_templates import load_figure_template
 # INSTANCIAÇÃO
 #external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 #app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-load_figure_template('slate')
-app = dash.Dash(external_stylesheets=[dbc.themes.SLATE])
+load_figure_template('minty')
+app = dash.Dash(external_stylesheets=[dbc.themes.MINTY])
 server = app.server
 
 # DATAFRAMES E PRÉ-PROCESSAMENTO DE DADOS
@@ -88,7 +88,7 @@ def render_graphs(cities, main_variable):
     fig_date_income = px.bar(df_date_income, y=main_variable, x='Date')
 
     for fig in [fig_city, fig_payment, fig_gender, fig_date_income]:
-        fig.update_layout(margin=dict(l=0, r=0, t=20, b=20), height=200, template='slate')
+        fig.update_layout(margin=dict(l=0, r=0, t=20, b=20), height=200, template='minty')
 
     fig_product_income.update_layout(margin=dict(l=0, r=0, t=20, b=20), height=500)
 
