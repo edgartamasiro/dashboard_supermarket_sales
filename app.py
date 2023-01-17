@@ -12,8 +12,8 @@ from dash_bootstrap_templates import load_figure_template
 # INSTANCIAÇÃO
 #external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 #app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-load_figure_template('minty')
-app = dash.Dash(external_stylesheets=[dbc.themes.MINTY])
+load_figure_template('slate')
+app = dash.Dash(external_stylesheets=[dbc.themes.SLATE])
 server = app.server
 
 # DATAFRAMES E PRÉ-PROCESSAMENTO DE DADOS
@@ -25,7 +25,7 @@ app.layout = html.Div(children=[
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardImg(src='./assets/logo_dark.png', top=True),
+                dbc.CardImg(src='/assets/logo_dark.png', top=True),
                 #dbc.CardBody([]),
                 html.H5('Cidades:'),
                 dcc.Checklist(df_data['City'].value_counts().index,
@@ -88,7 +88,7 @@ def render_graphs(cities, main_variable):
     fig_date_income = px.bar(df_date_income, y=main_variable, x='Date')
 
     for fig in [fig_city, fig_payment, fig_gender, fig_date_income]:
-        fig.update_layout(margin=dict(l=0, r=0, t=20, b=20), height=200, template='minty')
+        fig.update_layout(margin=dict(l=0, r=0, t=20, b=20), height=200, template='slate')
 
     fig_product_income.update_layout(margin=dict(l=0, r=0, t=20, b=20), height=500)
 
@@ -96,6 +96,7 @@ def render_graphs(cities, main_variable):
 
 # MAIN
 if __name__ == '__main__':
+    #app.run_server(debug=True)
     #app.run_server(debug=False, port=8080, host='0.0.0.0')
     app.run_server(debug=False)
 
