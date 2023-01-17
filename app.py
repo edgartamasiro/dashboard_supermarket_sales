@@ -12,7 +12,7 @@ from dash_bootstrap_templates import load_figure_template
 #external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 #app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 load_figure_template('minty')
-app = dash.Dash(external_stylesheets=[dbc.themes.MINTY])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.MINTY])
 server = app.server
 
 # DATAFRAMES E PRÉ-PROCESSAMENTO DE DADOS
@@ -95,7 +95,7 @@ def render_graphs(cities, main_variable):
 
 # MAIN
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
     #app.run_server(debug=False, port=8080, host='0.0.0.0')
 
 
