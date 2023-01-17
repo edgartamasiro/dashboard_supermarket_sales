@@ -26,16 +26,16 @@ app.layout = html.Div(children=[
         dbc.Col([
             dbc.Card([
                 dbc.CardImg(src='/static/images/logo_dark.png', top=True),
-                #dbc.CardBody([]),
-                html.H5('Cidades:'),
-                dcc.Checklist(df_data['City'].value_counts().index,
-                value=df_data['City'].value_counts().index, id='check-city',
-                inputStyle={'margin-right': '3px', 'margin-left': '5px'}),
+                dbc.CardBody([
+                    html.H5('Cidades:'),
+                    dcc.Checklist(df_data['City'].value_counts().index,
+                    value=df_data['City'].value_counts().index, id='check-city',
+                    inputStyle={'margin-right': '3px', 'margin-left': '5px'}),
 
-                html.H5('Variável de análise:', style={'margin-top': '50px'}),
-                dcc.RadioItems(['gross income', 'Rating'], value='gross income', id='main-variable',
-                inputStyle={'margin-right': '3px', 'margin-left': '5px'}),
-
+                    html.H5('Variável de análise:', style={'margin-top': '50px'}),
+                    dcc.RadioItems(['gross income', 'Rating'], value='gross income', id='main-variable',
+                    inputStyle={'margin-right': '3px', 'margin-left': '5px'}),                
+                ]),
                 #html.H2('ASIMOV', style={'font-family': 'Voltaire', 'font-size': '40px'}),
                 #html.Hr(),
             ], style={'height': '90vh', 'margin': '10px', 'padding': '10px'})
