@@ -5,7 +5,6 @@ import dash_bootstrap_components as dbc
 import numpy as np
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
 from dash import Dash, Input, Output, dcc, html
 from dash_bootstrap_templates import load_figure_template
 
@@ -25,7 +24,7 @@ app.layout = html.Div(children=[
     dbc.Row([
         dbc.Col([
             dbc.Card([
-                dbc.CardImg(src="./static/images/logo.png", top=True),
+                dbc.CardImg(src="static/images/logo.png", top=True),
                 dbc.CardBody([
                     html.H5('Cidades:'),
                     dcc.Checklist(df_data['City'].value_counts().index,
