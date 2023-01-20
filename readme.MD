@@ -2,6 +2,8 @@
   :briefcase: :bar_chart: DASHBOARD DE ANÁLISE DE REDES DE SUPERMERCADO
 </h1>
 
+![Screenshot](assets/cap01.png)
+
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/edgartamasiro/dashboard_supermarket_sales">
 
